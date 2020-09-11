@@ -6,43 +6,69 @@ int main()
 	string nome, part = ""; // variaveis nome do eleitor e partirdo
 	int can_um = 0,can_do = 0,can_tr = 0,can_qu = 0,can_ci = 0,n_b = 0,ind = 0; // recepição dos votos executados
 	int voto = 1; // variavel recebe numero do candidato
-	
-	while (voto != 0)
+	bool sair = false;
+	while (sair != true)
 	{
+		system("cls");
+		string ops;
 		voto = 0;
 		// Inicio do cadastro. 
 		cout << " Nome: ";
 		cin >> nome;
+		
+		if (nome == "")
+		{
+			while(nome != "")
+			{
+				cout << " Nome: ";
+				cin >> nome;	
+			}
+		}
 		linha
 		cout << " Partido: ";
 		cin >> part;
+		
+		if (part == "")
+		{
+			while(part != "")
+			{
+				cout << " Partido: ";
+				cin >> part;	
+			}	
+		}
 		linha
+		
 		cout << " Menu de Opcoes:\n";
 		linha
+		
 		cout << " 1 ate 5 - Votos validos para candidatos.\n";
 		cout << "\n";
 		cout << " 6 - Voto valido como indeciso.\n";
 		cout << "\n";
 		cout << " 7 - Voto valido como nulo ou branco.\n";
 		linha
-		cout << " 0 - finaliza a votacao \n";
 		linha 
+		
 		cout << " Numero do candidato em que votara: ";
 		cin >> voto;
 		linha
+		
 		// Efetivação da variavel voto
 		while ( voto > 7)
 		{
+			system("cls");
+			
 			cout << " !!! ... ERRO ... !!! \n";
 			linha
+			
 			cout << " 1 ate 5 - Votos validos para candidatos.\n";
 			cout << "\n";
 			cout << " 6 - Voto valido como indeciso.\n";
 			cout << "\n";
 			cout << " 7 - Voto valido como nulo ou branco.\n";
 			linha
-			cout << " 0 - finaliza a votacao \n";
 			linha 
+			
 			cout << " Numero do candidato em que votara: ";
 			cin >> voto;
 			linha
@@ -52,32 +78,43 @@ int main()
 		{
 			can_um += 1;
 		}
-		if (voto == 2)
+		else if (voto == 2)
 		{
 			can_do += 1;
 		}
-		if (voto == 3)
+		else if (voto == 3)
 		{
 			can_tr += 1;
 		}
-		if (voto == 4)
+		else if (voto == 4)
 		{
 			can_qu += 1;
 		}
-		if (voto == 5)
+		else if (voto == 5)
 		{
 			can_ci += 1;
 		}
-		if (voto == 6)
+		else if (voto == 6)
 		{
 			ind += 1;
 		}
-		if (voto == 7)
+		else if (voto == 7)
 		{
 			n_b += 1;
-		}	
+		}
+		cout << "Novo voto: [S/N] ";
+		cin >> ops;
+		
+		if(ops == "s" or ops == "S")
+		{
+			sair = false;
+		}
+		else{
+			sair = true;
+		}
 	}// Fim de Apuração.	
 	// Incio da Analize de dados 
+	system("cls");
 	int total = can_um + can_do + can_tr + can_qu + can_ci + ind + n_b;
 	// porcentagem de aprovação e rejeição
 	for(int i = 1; i < 6; i++)
@@ -89,22 +126,22 @@ int main()
 			porcem_a = can_um * 100 / total;
 			porcem_r = 100 - porcem_a;
 		}
-		if (i == 2)
+		else if (i == 2)
 		{
 			porcem_a = can_do * 100 / total;
 			porcem_r = 100 - porcem_a;
 		}
-		if (i == 3)
+		else if (i == 3)
 		{
 			porcem_a = can_tr * 100 / total;
 			porcem_r = 100 - porcem_a;
 		}
-		if (i == 4)
+		else if (i == 4)
 		{
 			porcem_a = can_qu * 100 / total;
 			porcem_r = 100 - porcem_a;
 		}
-		if (i == 5)
+		else if (i == 5)
 		{
 			porcem_a = can_ci * 100 / total;
 			porcem_r = 100 - porcem_a;
