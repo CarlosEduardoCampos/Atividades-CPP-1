@@ -46,9 +46,7 @@ int main()
 			cout << " Numero do candidato em que votara: ";
 			cin >> voto;
 			linha
-		}
-		// Fim de Efetivação
-		// Final do cadastro.
+		}// Fim de Efetivação // Final do cadastro.
 		// Apuração do resultado.
 		if (voto == 1)
 		{
@@ -77,13 +75,10 @@ int main()
 		if (voto == 7)
 		{
 			n_b += 1;
-		}
-		// Fim de Apuração.	
-	}
+		}	
+	}// Fim de Apuração.	
 	// Incio da Analize de dados 
-	
 	int total = can_um + can_do + can_tr + can_qu + can_ci + ind + n_b;
-	
 	// porcentagem de aprovação e rejeição
 	for(int i = 1; i < 6; i++)
 	{
@@ -93,46 +88,33 @@ int main()
 		{
 			porcem_a = can_um * 100 / total;
 			porcem_r = 100 - porcem_a;
-			
-			cout << " O candidato 1 teve: \n";
-			cout <<" "<<porcem_a<<"% de aceitacao e "<<porcem_r<<"% de rejeicao \n";
 		}
 		if (i == 2)
 		{
 			porcem_a = can_do * 100 / total;
 			porcem_r = 100 - porcem_a;
-			
-			cout << " O candidato 2 teve: \n";
-			cout <<" "<<porcem_a<<"% de aceitacao e "<<porcem_r<<"% de rejeicao \n";
 		}
 		if (i == 3)
 		{
 			porcem_a = can_tr * 100 / total;
 			porcem_r = 100 - porcem_a;
-			
-			cout << " O candidato 3 teve: \n";
-			cout <<" "<<porcem_a<<"% de aceitacao e "<<porcem_r<<"% de rejeicao \n";
 		}
 		if (i == 4)
 		{
 			porcem_a = can_qu * 100 / total;
 			porcem_r = 100 - porcem_a;
-			
-			cout << " O candidato 4 teve: \n";
-			cout <<" "<<porcem_a<<"% de aceitacao e "<<porcem_r<<"% de rejeicao \n";
 		}
 		if (i == 5)
 		{
 			porcem_a = can_ci * 100 / total;
 			porcem_r = 100 - porcem_a;
-			
-			cout << " O candidato 5 teve: \n";
-			cout <<" "<<porcem_a<<"% de aceitacao e "<<porcem_r<<"% de rejeicao \n";
 		}
+		cout << " O candidato"<<i<<" teve: \n";
+		cout <<" "<<porcem_a<<"% de aceitacao e "<<porcem_r<<"% de rejeicao \n";
 		linha
 	}
-	int porcem_nb = n_b * 100 / total;
-	int porcem_in = ind * 100 / total;	
+	int porcem_nb = (n_b * 100)/ total;
+	int porcem_in = (ind * 100)/ total;	
 	
 	cout <<" Tivemos "<<porcem_nb<<"% de votos nulo e brancos\n";
 	cout <<" "<<porcem_in<<"% estavao idecisos";
