@@ -1,4 +1,5 @@
 # include <iostream>
+# include <math.h>
 # include <locale>
 using namespace std;
 //
@@ -57,19 +58,19 @@ int main()
 					if(i == 0){
 						bb = "Cerveja(lata)";
 						quant = 3 * part;
-						valor = bebidas[0] * quant;
+						valor = bebidas[0] * ceil(quant);
 						total += valor;
 					}
 					else if(i == 1){
 						bb = "Refri-normal(litro)";
 						quant = 0.8 * part;
-						valor = bebidas[0] * quant;
+						valor = bebidas[0] * ceil(quant);
 						total += valor;
 					}
 					else if(i == 2){
 						bb = "Refri-diet(litro)";
 						quant = 0.2 * part;
-						valor = bebidas[0] * quant;
+						valor = bebidas[0] * ceil(quant);
 						total += valor;
 					}
 					//
@@ -163,14 +164,14 @@ int main()
 					if(i == 0)
 					{
 						br = "Carvão(saco)";
-						quant = 0.05 * part;
+						quant = ceil(0.05 * part);
 						valor = braza[0] * quant;
 						total += valor;
 					}
 					else if(i == 1)
 					{
 						br = "Papel higiênico(pacote)";
-						quant = 0.025 * part;
+						quant = ceil(0.025 * part);
 						valor = braza[1] * quant;
 						total += valor;
 					}
@@ -226,7 +227,7 @@ int main()
 					else if(i == 1)
 					{
 						ou = "Sal-grosso(saco)";
-						quant = 0.02 * part;
+						quant = ceil(0.02 * part);
 						valor = braza[1] * quant;
 						total += valor;
 					}
@@ -239,8 +240,8 @@ int main()
 				float porp = (taxa + total)/ part;
 				//
 				system("cls");
-				cout <<"\n ... Valor total = R$"<<total<<" + Taxa de risco = R$"<<taxa<<" ...\n";
-				cout <<"\n ............... Valor por pessoal = "<<porp<<" ..............\n";
+				cout <<"\n ... Valor total = R$ "<<ceil(total)<<" + Taxa de risco = R$ "<<ceil(taxa)<<" ...\n";
+				cout <<"\n ............... Valor por pessoal = "<<ceil (porp)<<" ..............\n";
 			}	
 		}
 		else if(op == 1)
