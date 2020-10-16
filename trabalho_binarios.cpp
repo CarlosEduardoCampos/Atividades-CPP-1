@@ -1,4 +1,5 @@
 # include <iostream>
+# include <cstring>
 # include <math.h>
 # include <locale>
 using namespace std;
@@ -49,28 +50,26 @@ int main()
 	//
 	else if(op == 1)
 	{
+		char bin[20];//binario.
+		int dec = 0, i;// decimal , contador.
 		//
-		int n=0;
+		cout <<"\n Binario: ";//Pedindo binario.
+		cin >> bin;//Recebendo binario.
 		//
-		cout <<"Numero de casas:[binario] ";
-		cin >>n; 
+		int c = 0; // contador.
 		//
-		int bin[200], dec;
-		//
-		for(int i=0; i <=(n-1); i++)
-		{
-			cout <<" Binnario "<<i<<": ";
-			cin >>bin[i];	
-		}
-		//
-		for(int i=(n-1); i>=0; i--)
-		{
-			if(bin[i] != 0)
-			{
-				dec += pow((bin[i]*2),i);
+		for( i=(strlen(bin)-1); i>=0; i--)// numero 0 ou 1 elevado pela posição.
+		{	
+			if(bin[c] == '0'){ // transformando str para int.
+				dec += 0;
 			}
+			else if(bin[c] == '1'){ // transformando str para int.
+				dec += pow(2,(i));
+			}
+			c++;
 		}
-		cout <<" Decimal: "<<dec<<"\n";
+		//
+		cout <<"\n DECIMAL : "<<dec<<"\n";// mostrando resultado.
 	}
 	//
 	system("pause");
