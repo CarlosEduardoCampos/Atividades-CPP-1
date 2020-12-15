@@ -14,7 +14,6 @@ struct times{
 };
 int main()
 {
-	setlocale(LC_ALL,"portugues");
 	//
 	times time[50];
 	string trava =" TRAVA ";
@@ -45,8 +44,6 @@ int main()
 				cout <<"\n Nivel da equipe: ";
 				cin >> time[cont].nivel;
 				//
-				char res;
-				//
 				for(int m = 0; m <= 3; m++)
 				{
 					if( m < 3 )
@@ -59,23 +56,45 @@ int main()
 						cin >> time[cont].menbr[m].mname;
 					}
 					//
-						cout <<"\n\t Ano de nacimento: ";
-						cin >> time[cont].menbr[m].nacim;
+					cout <<"\n\t Ano de nacimento: ";
+					cin >> time[cont].menbr[m].nacim;
 					//
 					do{
 						cout <<"\n\t Perildo: ";
 						cin >> time[cont].menbr[m].peril;
 					}while(time[cont].menbr[m].peril < 0);
 					//
-					cout <<"\n [M]masculino [F]feminino [O]outros; \n";
-					cout <<"\n\t Sexo: ";
-					cin >> time[cont].menbr[m].sexo;
+					bool continuar = true;
+					do{
+						//
+						cout <<"\n [M]masculino [F]feminino [O]outros; \n";
+						cout <<"\n\t Sexo: ";
+						cin >> time[cont].menbr[m].sexo;
+						//
+						if(time[cont].menbr[m].sexo == 'm' || time[cont].menbr[m].sexo == 'M')
+						{
+							continuar = false;
+						}
+						else if(time[cont].menbr[m].sexo == 'f' || time[cont].menbr[m].sexo == 'F')
+						{
+							continuar = false;
+						}
+						else if(time[cont].menbr[m].sexo == 'o' || time[cont].menbr[m].sexo == 'O')
+						{
+							continuar = false;
+						}
+						else{
+							cout <<"\n ERRO ..... digite novamente:\n";
+						}
+						
+					}while(continuar);
 					//
 				}
+				char res;
 				//
-					cout <<"\n\n [S]sim [N]nao; \n";
-					cout <<"\n Desja continuar: ";
-					cin >> res;
+				cout <<"\n\n [S]sim [N]nao; \n";
+				cout <<"\n Desja continuar: ";
+				cin >> res;
 				//
 				if(cont == 0 & livre == 0)
 				{
