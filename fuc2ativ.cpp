@@ -108,8 +108,7 @@ char menu()
 			break;
 		
 		default:
-			tep = tep;
-			menu();
+			tep = menu();
 			break;
 	}
 	return tep;// Valor a ser utilizado no programa principal.
