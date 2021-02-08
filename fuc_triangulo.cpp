@@ -37,7 +37,7 @@ string tri(float y, float x = 0.0, float z = 0.0)
 			pe = x;
 		}
 	}
-	else if(z > x && y < z)// y maior.
+	else if(z > x && y < z)// z maior.
 	{
 		ma = z;
 		if(x > y)// x medio y pequeno.
@@ -64,7 +64,7 @@ string tri(float y, float x = 0.0, float z = 0.0)
 	//
 	if(vai == 1)
 	{
-		if(x == y && y == z)
+		if(x == y && y == z)// tede de igualdade de dois lados.
 		{
 			tex = "\n Triângulo Equilátero \n";
 		}
