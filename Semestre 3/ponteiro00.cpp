@@ -40,13 +40,13 @@ celula *inserirNoInicio(celula *lista, int idade, string nome)
 // Função que acresenta mais uma celula(pesssoa) a lista no fim
 celula *inserirNoFim(celula *lista, int idade, string nome)
 {
+	celula *nova = new celula;
+	nova->nome = nome;
+	nova->idade = idade;
+	nova->nex = NULL;
+	//
 	if(lista != NULL)
 	{
-		celula *nova = new celula;
-		nova->nome = nome;
-		nova->idade = idade;
-		nova->nex = NULL;
-		//
 		celula *aux = lista;//primeiro dos ponteiros(inicio da lista)
 		//
 		while(aux->nex != NULL)
@@ -54,11 +54,12 @@ celula *inserirNoFim(celula *lista, int idade, string nome)
 			aux = aux->nex;
 		}
 		aux->nex = nova;
+		return lista;
 	}else
 	{
-		cout <<" Sua lista esta vazia \n";
+		cout <<" Sua lista estava vazia e foi adicionado novos dados! \n";
+		return nova;
 	}
-	return lista;
 }
 // Mostra na tela nomes cadastrados nos endereÇos de memoria
 void imprimirLista(celula *lista)
@@ -75,16 +76,13 @@ void imprimirLista(celula *lista)
 		cout <<"\n..........................................\n";
 	}else
 	{
-		cout <<" Sua lista esta vazia \n";
+		cout <<" Sua lista estava vazia \n";
 	}
 }
 //
 int main()
 {
 	celula *lista = NULL;
-	//
-	lista = inserirNoInicio(lista, recebeIdade(), recebeNome());
-	lista = inserirNoInicio(lista, recebeIdade(), recebeNome());
 	//
 	imprimirLista(lista);
 	//
