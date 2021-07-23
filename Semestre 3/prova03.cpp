@@ -9,7 +9,6 @@ struct aluno
 	string nome;
 	string codigo;
 	aluno *nex;
-	aluno *ant;
 };
 
 float setNota(float num=0.0)
